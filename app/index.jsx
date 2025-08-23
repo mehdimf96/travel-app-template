@@ -1,5 +1,6 @@
 import Logo from "@/assets/images/Logo.png";
 import backgroundImage from "@/assets/images/WellcomeImage.png";
+import { router } from "expo-router";
 import {
   Dimensions,
   Image,
@@ -30,13 +31,19 @@ export default function WellcomeScreen() {
           </Text>
         </View>
         <View>
-          <TouchableOpacity className="bg-primary rounded-xl mb-1 ">
+          <TouchableOpacity
+            className="bg-primary rounded-xl mb-1 "
+            onPress={() => router.push("/planYourTrips")}
+          >
             <Text className="text-center text-white py-3 text-sm">
               Get started
             </Text>
           </TouchableOpacity>
           <Text className="text-background text-center">
-            Already have an account? <TouchableOpacity>Log in</TouchableOpacity>
+            Already have an account?{" "}
+            <TouchableOpacity onPress={() => router.push("/login")}>
+              Log in
+            </TouchableOpacity>
           </Text>
         </View>
       </View>
